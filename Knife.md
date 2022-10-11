@@ -1,5 +1,5 @@
-# Knife HackTheBox
-
+# Knife - HackTheBox Walkthrough
+ 
 Difficulty: Easy
 
 Machine Status: Retired
