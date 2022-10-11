@@ -16,6 +16,8 @@ https://httpd.apache.org/security/vulnerabilities_24.html
 
 Next, I fired up Burp Suite and went to the web page. After probing around I didn’t find anything interesting as there are no links on the page. I decided to probe using dirsearch however there was nothing of great interest. 
 
+<img width="600" alt="74f2b922bea14415927eac5559df7575" src="https://user-images.githubusercontent.com/114961392/194978719-0c5ec71a-f1e2-4ea6-bc64-71147dee5cf8.png">
+
 <img width="472" alt="19e20ecacc5b4110b1d2ac89efa9e525" src="https://user-images.githubusercontent.com/114961392/194975850-4f261afd-fa8e-4933-a384-8b7c45b5e20b.png">
 
 I went back to Burp Suite to check out the requests and responses. I did a google search for exploits on the PHP version PHP/8.1.0-dev and found something useful. I found an interesting exploit on exploit-db with a link to a GitHub page. 
