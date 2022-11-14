@@ -1,4 +1,4 @@
-# Lame - HackTheBox Walkthrough
+# Lame - HackTheBox
 
 <img width="417" alt="image" src="https://user-images.githubusercontent.com/114961392/201272878-722a2d2e-2ddc-400f-9190-6c772f04b4af.png">
  
