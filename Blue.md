@@ -1,4 +1,4 @@
-# Blue - HackTheBox Walkthrough
+# Blue - HackTheBox
 
 <img width="422" alt="image" src="https://user-images.githubusercontent.com/114961392/200467220-2bd05b1c-bec9-4708-8ef2-7f8bd3d16e2b.png">
  
