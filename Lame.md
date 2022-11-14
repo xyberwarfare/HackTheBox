@@ -10,7 +10,7 @@ Difficulty: Easy
 Lame was the first box released on HackTheBox. It was nice and easy as it involves using Metasploit modules.  
 Vulnerability: Samba 3.0.20
 
-## Enumeration
+## Reconnaissance
 
 Let's start by scanning all ports with nmap.  
 nmap -p- --min-rate=10000 10.10.10.3  
