@@ -1,4 +1,4 @@
-# Knife - HackTheBox Walkthrough
+# Knife - HackTheBox
 
 <img width="424" alt="image" src="https://user-images.githubusercontent.com/114961392/200475129-e59ba3db-5fa8-4134-9159-afee40f5d8e4.png">
 
