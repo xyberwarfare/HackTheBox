@@ -69,4 +69,27 @@ Since we already have the password for this account, we can try the **sudo -l** 
 
 <img width="541" alt="image" src="https://user-images.githubusercontent.com/114961392/201816009-f3d2eb88-37a9-41fe-a085-f179a52d6bf1.png">
 
-This shows 
+This shows that the user is allowed to run **/home/deploy/password-manager**. Using cat to look at the file, its heavily encrypted however if you scroll down there is some clear text which tells you the master password, **Sample**.  
+
+<img width="832" alt="image" src="https://user-images.githubusercontent.com/114961392/201816761-3e651408-15c6-4ab3-8745-79e53d6b4dde.png">
+
+Now let's run the program with sudo and enter the master password when requested.  
+
+<img width="314" alt="image" src="https://user-images.githubusercontent.com/114961392/201816957-becd1f03-00b6-4e4b-8869-b991fe5c73b6.png">
+
+This displays credentials for the deploy machine. I will take note of these and SSH in with these credentials.  
+Once we are in, I will upload linpeas to find the next vulnerability. Straight away we can see a docker vulnerability.  
+
+<img width="828" alt="image" src="https://user-images.githubusercontent.com/114961392/201817277-e2b0ba15-6bee-46e7-998b-fbac54cbb2a3.png">
+
+Let's search [GTFOBins](https://gtfobins.github.io/) for docker exploits. 
+
+<img width="616" alt="image" src="https://user-images.githubusercontent.com/114961392/201817536-22046c0a-b9ac-4e80-832f-532bd3336e0e.png">
+
+This looks good so let's try and see what happens.  
+
+<img width="604" alt="image" src="https://user-images.githubusercontent.com/114961392/201817678-cede1115-f5ac-437d-895d-ea4134802492.png">
+
+WOOSHKAH! We have root. From here we can go ahead and capture the root flag!  
+
+<img width="169" alt="image" src="https://user-images.githubusercontent.com/114961392/201817795-1118b916-5c8c-42b8-9875-4ea77e33dfd9.png">
