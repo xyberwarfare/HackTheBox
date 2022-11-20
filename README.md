@@ -1,4 +1,4 @@
-# HackTheBox CTF Walkthroughs
+# HackTheBox Write-Ups
 
 HackTheBox Profile - [xyberwar](https://app.hackthebox.com/profile/1197537)
 
