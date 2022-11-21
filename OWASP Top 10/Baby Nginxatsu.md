@@ -1,7 +1,7 @@
 ## HackTheBox - Baby Nginxatsu (Challenge)
 
-Baby Nginxatsu is the fourth challenge in the OWASP Top 10 track.
-Vulnerability: Nginx Conf
+Baby Nginxatsu is the fourth challenge in the OWASP Top 10 track.  
+Vulnerability: Nginx Conf  
 
 ### Reconnaissance
 The web page has another basic username and password login form with the option to create your own account.  
